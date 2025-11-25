@@ -1,7 +1,5 @@
 import io.restassured.RestAssured;
-
 import static io.restassured.RestAssured.given;
-
 public class Basic2 {
     public static void main(String[] args) {
         RestAssured.baseURI="https://rahulshettyacademy.com";
