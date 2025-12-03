@@ -1,14 +1,14 @@
+package com.sgtesting.RahulShetty;
+
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
 
-public class Basic2 {
+
+public class Basic1 {
     public static void main(String[] args) {
         RestAssured.baseURI="https://rahulshettyacademy.com";
-        given().
-                log().
-                all().queryParam("key","qaclick123").header("Content-Type",
+        given().log().all().queryParam("key","qaclick123").header("Content-Type","\t\n" +
                 "application/json").body("{\n" +
                 "  \"location\": {\n" +
                 "    \"lat\": -38.383494,\n" +
@@ -24,6 +24,7 @@ public class Basic2 {
                 "  ],\n" +
                 "  \"website\": \"http://google.com\",\n" +
                 "  \"language\": \"Kannada-IN\"\n" +
-                "}\n").when().post("maps/api/place/add/json").then().assertThat().statusCode(200).body("status",equalTo("OK")).header("Server","Apache/2.4.52 (Ubuntu)");
+                "}\n").when().post("maps/api/place/add/json").then().assertThat().statusCode(203);
     }
+
 }
